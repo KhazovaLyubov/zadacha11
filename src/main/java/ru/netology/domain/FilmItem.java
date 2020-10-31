@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CinemaItem {
+public class FilmItem {
     private int id;
     private int cinemaId;
     private String cinemaName;
