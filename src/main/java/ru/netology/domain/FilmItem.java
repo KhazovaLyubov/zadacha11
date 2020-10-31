@@ -4,13 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
-public class PurchaseItem {
+public class FilmItem {
     private int id;
-    private int productId;
-    private String productName;
-    private int productPrice;
-    private int count;
+    private int cinemaId;
+    private String cinemaName;
+    private String cinemaGenre;
+    private boolean date;
 }
