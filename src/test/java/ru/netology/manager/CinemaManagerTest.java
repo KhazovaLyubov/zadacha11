@@ -11,7 +11,7 @@ class CinemaManagerTest {
     void getLastTwo() {
         CinemaManager manager = new CinemaManager(2);
         CinemaItem first = new CinemaItem(1, 1, "first", "cartoon", true);
-        CinemaItem second = new CinemaItem(2, 2, "second","adventures", true);
+        CinemaItem second = new CinemaItem(2, 2, "second", "adventures", true);
         manager.add(first);
         manager.add(second);
         CinemaItem[] actual = manager.getAll();
@@ -45,7 +45,8 @@ class CinemaManagerTest {
         CinemaItem[] actual = manager.getAll();
         CinemaItem[] expexcted = new CinemaItem[]{ten, nine, eight, seven, six, five, four, three, two, one};
         assertArrayEquals(expexcted, actual);
-}
+    }
+
     @Test
     public void getLastEleven() {
         CinemaManager manager = new CinemaManager(10);
@@ -72,7 +73,23 @@ class CinemaManagerTest {
         manager.add(ten);
         manager.add(eleven);
         CinemaItem[] actual = manager.getAll();
-        CinemaItem[] expected = new CinemaItem[] {eleven, ten, nine, eight, seven, six, five, four, three, two};
+        CinemaItem[] expected = new CinemaItem[]{eleven, ten, nine, eight, seven, six, five, four, three, two};
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void getNull() {
+        CinemaManager manager = new CinemaManager(0);
+        CinemaItem[] actual = manager.getAll();
+        CinemaItem[] expected = new CinemaItem[]{, };
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    void getToNull() {
+        CinemaManager manager = new CinemaManager(-1);
+        CinemaItem[] actual = manager.getAll();
+        CinemaItem[] expected = new CinemaItem[]{, };
+        assertArrayEquals(expected, actual);
+    }
+
 }
