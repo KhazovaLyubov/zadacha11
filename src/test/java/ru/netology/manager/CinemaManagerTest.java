@@ -92,4 +92,20 @@ class CinemaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void getLessThanLimit() {
+        CinemaManager manager = new CinemaManager(5);
+        CinemaItem first = new CinemaItem(1, 1, "first", "cartoon", true);
+        CinemaItem second = new CinemaItem(2, 2, "second", "adventures", true);
+        CinemaItem three = new CinemaItem(3, 3, "three", "fantasy", true);
+        CinemaItem four = new CinemaItem(4, 4, "four", "detective", true);
+        manager.add(first);
+        manager.add(second);
+        manager.add(three);
+        manager.add(four);
+        CinemaItem[] actual = manager.getAll();
+        CinemaItem[] expected = new CinemaItem[]{four, three, second, first};
+        assertArrayEquals(expected, actual);
+    }
+
 }
